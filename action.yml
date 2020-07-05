@@ -1,0 +1,33 @@
+name: "nxlvlsoftware/docker-build"
+description: "Build docker images & push to a docker registry."
+inputs:
+  path:
+    description: "The path to the Dockerfile to build."
+    default: "."
+    required: true
+  name:
+    description: "The docker image name."
+    required: true
+  tag:
+    description: "The docker image tag name."
+    required: true
+  extra_args:
+    description: "Extra arguments to pass to the docker build command."
+    default: ""
+    required: false
+  registry_username:
+    description: "The docker registry username for the account to publish the image from."
+    required: true
+  registry_password:
+    description: "The docker registry password for the account to publish the image from."
+    required: true
+  registry_uri:
+    description: "The docker registry uri for the account to publish the image from."
+    required: false
+  pull:
+    description: "Should we pull existing images before the build to speed up the build?"
+    default: "true"
+    required: false
+runs:
+  using: "docker"
+  image: "Dockerfile"
