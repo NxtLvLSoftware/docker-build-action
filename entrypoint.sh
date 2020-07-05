@@ -19,7 +19,7 @@ fi
 EXTRA_ARGS="${INPUT_EXTRA_ARGS}"
 
 # check if we should pull existing images to help speed up the build
-if [ ! -z "${INPUT_PULL}" ] || [ "${INPUT_PULL}" != "false" ] || [ "${INPUT_PULL}" != "" ]; then
+if [ ! -z "${INPUT_PULL}" ] && [ "${INPUT_PULL}" != "false" ] && [ "${INPUT_PULL}" != "" ]; then
 	# if we should just pull a previous version as cache
 	if [ "${INPUT_PULL}" == "true" ]; then
 		INPUT_PULL="${INPUT_NAME}:'$INPUT_TAG'"
