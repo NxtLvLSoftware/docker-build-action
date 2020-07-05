@@ -11,6 +11,7 @@ using the actions pipeline.
 | Input             | Description                                                                                                                                                         |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | path              | The path to the Dockerfile to build.                                                                                                                                |
+| file              | Name or path to the Dockerfile to build. Must be in the path dir.                                                                                                   |
 | name              | The docker image name.                                                                                                                                              |
 | tag               | The docker image tag name.                                                                                                                                          |
 | extra_args        | Extra arguments to pass to the docker build command.                                                                                                                |

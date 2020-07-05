@@ -2,8 +2,12 @@ name: "nxlvlsoftware/docker-build"
 description: "Build docker images & push to a docker registry."
 inputs:
   path:
-    description: "The path to the Dockerfile to build."
-    default: "./Dockerfile"
+    description: "The path to the Dockerfile's build context."
+    default: "."
+    required: true
+  file:
+    description: "Name or path to the Dockerfile to build. Must be in the path dir."
+    default: "Dockerfile"
     required: true
   name:
     description: "The docker image name."
