@@ -40,12 +40,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       - uses: nxtlvlsoftware/docker-build@1.0.0
         with:
           name: docker.pkg.github.com/nxtlvlsoftware/repo/image-name
           tag: ${{ github.event.release.tag_name }}
-          registery_username: ${{ secrets.DOCKER_USERNAME }}
-          registery_password: ${{ secrets.DOCKER_PASSWORD }}
-          registery_uri: ${{ secrets.DOCKER_REGISTRY }}
+          registry_username: ${{ secrets.DOCKER_USERNAME }}
+          registry_password: ${{ secrets.DOCKER_PASSWORD }}
+          registry_uri: ${{ secrets.DOCKER_REGISTRY }}
 ```
