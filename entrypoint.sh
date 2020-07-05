@@ -12,18 +12,17 @@ fi
 
 echo "${INPUT_REGISTRY_PASSWORD}" | docker login ${INPUT_REGISTRY_URI} -u ${INPUT_REGISTRY_USERNAME} --password-stdin
 
-export DOCKER_BUILDKIT=1
-
 EXTRA_ARGS="${INPUT_EXTRA_ARGS}"
 
 # check if we should pull existing images to help speed up the build
 if [ "${INPUT_PULL}" == "true" ]; then
+	export DOCKER_BUILDKIT=1
 	sh -c "docker pull ${INPUT_NAME}:'$INPUT_TAG'"
-	EXTRA_ARGS="${EXTRA_ARGS} --cache-from ${INPUT_NAME}:'$INPUT_TAG' --build-arg BUILDKIT_INLINE_CACHE=1 "
+	EXTRA_ARGS="${EXTRA_ARGS} --cache-from ${INPUT_NAME}:'$INPUT_TAG' --build-arg BUILDKIT_INLINE_CACHE=1"
 fi
 
 # build the base pmmp duels image
-sh -c "docker build $EXTRA_ARGS -t ${INPUT_NAME}:'$INPUT_TAG' ${INPUT_PATH}"
+sh -c "docker build -t ${INPUT_NAME}:'$INPUT_TAG' $EXTRA_ARGS ${INPUT_PATH}"
 
 # publish the builds to github packages docker register
 sh -c "docker push ${INPUT_NAME}:'$INPUT_TAG'"
