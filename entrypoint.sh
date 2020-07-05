@@ -31,7 +31,7 @@ if [ ! -z "${INPUT_PULL}" ] && [ "${INPUT_PULL}" != "false" ] && [ "${INPUT_PULL
 fi
 
 # build the image
-sh -c "docker build -t ${INPUT_NAME}:'$INPUT_TAG' $EXTRA_ARGS ${INPUT_PATH}"
+sh -c "docker build -t ${INPUT_NAME}:'$INPUT_TAG' $EXTRA_ARGS -f ${INPUT_PATH}"
 
 # check if we should publish the builds to docker registry
 if [ "${INPUT_PUSH}" == "true" ]; then

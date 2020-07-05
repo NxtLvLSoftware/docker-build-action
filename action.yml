@@ -3,7 +3,7 @@ description: "Build docker images & push to a docker registry."
 inputs:
   path:
     description: "The path to the Dockerfile to build."
-    default: "."
+    default: "./Dockerfile"
     required: true
   name:
     description: "The docker image name."
