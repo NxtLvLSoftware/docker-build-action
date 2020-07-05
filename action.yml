@@ -25,7 +25,7 @@ inputs:
     description: "The docker registry uri for the account to publish the image from."
     required: false
   pull:
-    description: "Should we pull existing images before the build to speed up the build?"
+    description: "Should we pull existing images before the build to speed up the build? Uses the current tag and version if true or the the value should be in image:version format."
     default: "true"
     required: false
   push:

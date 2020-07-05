@@ -8,17 +8,17 @@ using the actions pipeline.
 ## Usage
 
 ### Action Inputs
-| Input             | Description                                                             |
-| ----------------- | ----------------------------------------------------------------------- |
-| path              | The path to the Dockerfile to build.                                    |
-| name              | The docker image name.                                                  |
-| tag               | The docker image tag name.                                              |
-| extra_args        | Extra arguments to pass to the docker build command.                    |
-| registry_username | The docker registry username for the account to publish the image from. |
-| registry_password | The docker registry password for the account to publish the image from. |
-| registry_uri      | The docker registry uri for the account to publish the image from.      |
-| pull              | Should we pull existing images before the build to speed up the build?  |
-| push              | Should we push the built image to the registry?                         |
+| Input             | Description                                                                                                                                                         |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| path              | The path to the Dockerfile to build.                                                                                                                                |
+| name              | The docker image name.                                                                                                                                              |
+| tag               | The docker image tag name.                                                                                                                                          |
+| extra_args        | Extra arguments to pass to the docker build command.                                                                                                                |
+| registry_username | The docker registry username for the account to publish the image from.                                                                                             |
+| registry_password | The docker registry password for the account to publish the image from.                                                                                             |
+| registry_uri      | The docker registry uri for the account to publish the image from.                                                                                                  |
+| pull              | Should we pull existing images before the build to speed up the build? Uses the current tag and version if true or the the value should be in image:version format. |
+| push              | Should we push the built image to the registry?                                                                                                                     |
 
 
 ### Workflow Examples
