@@ -18,6 +18,7 @@ using the actions pipeline.
 | registry_password | The docker registry password for the account to publish the image from. |
 | registry_uri      | The docker registry uri for the account to publish the image from.      |
 | pull              | Should we pull existing images before the build to speed up the build?  |
+| push              | Should we push the built image to the registry?                         |
 
 
 ### Workflow Examples

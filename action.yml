@@ -28,6 +28,10 @@ inputs:
     description: "Should we pull existing images before the build to speed up the build?"
     default: "true"
     required: false
+  push:
+    description: "Should we push the built image to the registry?"
+    default: "true"
+    required: false
 runs:
   using: "docker"
   image: "Dockerfile"
