@@ -29,7 +29,7 @@ if [ ! -z "${INPUT_PULL}" ] && [ "${INPUT_PULL}" != "false" ] && [ "${INPUT_PULL
 	sh -c "docker pull ${INPUT_PULL}"
 	EXTRA_ARGS="${EXTRA_ARGS} --cache-from ${INPUT_PULL} --build-arg BUILDKIT_INLINE_CACHE=1"
 fi
-echo $EXTRA_ARGS
+echo "docker build -t ${INPUT_NAME}:'$INPUT_TAG' $EXTRA_ARGS -f ${INPUT_FILE} ${INPUT_PATH}"
 # build the image
 sh -c "docker build -t ${INPUT_NAME}:'$INPUT_TAG' $EXTRA_ARGS -f ${INPUT_FILE} ${INPUT_PATH}"
 
